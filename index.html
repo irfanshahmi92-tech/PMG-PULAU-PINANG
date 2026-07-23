@@ -46,14 +46,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Styling Khusus untuk Portal Rasmi */
+        /* Gaya Khas untuk Portal Rasmi PMGPP */
         body { font-family: 'Inter', sans-serif; }
         
         .gold-border-top {
             border-top: 4px solid #f59e0b;
         }
 
-        /* Sistem Reka Bentuk Glassmorphism & Lut Sinar */
+        /* Sistem Glassmorphism & Gradien */
         .glass-main-bg {
             background: radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 0.08) 0%, rgba(15, 23, 42, 0.02) 100%);
         }
@@ -89,14 +89,27 @@
             background: radial-gradient(circle at 50% 30%, rgba(15, 23, 42, 0.82) 0%, rgba(15, 23, 42, 0.96) 100%);
         }
 
-        /* Gaya Preloader */
         #preloader {
             transition: opacity 0.5s ease, visibility 0.5s ease;
         }
 
-        /* Video Glow Animation */
         .video-container {
             box-shadow: 0 20px 50px -15px rgba(2, 132, 199, 0.3);
+        }
+
+        /* Skrol kustom */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0284c7;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
         }
     </style>
 </head>
@@ -111,7 +124,7 @@
         <p class="mt-4 text-sm tracking-widest uppercase font-medium text-slate-400 animate-pulse" data-i18n="loading">Memuatkan Portal Rasmi...</p>
     </div>
 
-    <!-- Bar Pengumuman & Navigasi Atas -->
+    <!-- Bar Pengumuman Atas -->
     <div class="bg-govNavy text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
             <div class="flex items-center gap-4">
@@ -125,10 +138,10 @@
                     <i class="fa-solid fa-magnifying-glass"></i> <span class="hidden sm:inline" data-i18n="search">Carian</span>
                 </button>
                 <span>|</span>
-                <!-- Pautan Media Sosial Atas -->
+                <!-- Media Sosial -->
                 <div class="hidden sm:flex items-center gap-2.5 text-slate-300">
-                    <a href="https://www.instagram.com/pmgpenang?igsh=bGR2ZHZnc2syb3Iw" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition" title="Instagram PMGPP"><i class="fa-brands fa-instagram text-sm"></i></a>
-                    <a href="https://www.tiktok.com/@pmg.pulau.pinang?_r=1&_t=ZS-985yzUeVIJg" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition" title="TikTok PMGPP"><i class="fa-brands fa-tiktok text-sm"></i></a>
+                    <a href="https://www.instagram.com/pmgpenang" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition" title="Instagram PMGPP"><i class="fa-brands fa-instagram text-sm"></i></a>
+                    <a href="https://www.tiktok.com/@pmg.pulau.pinang" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition" title="TikTok PMGPP"><i class="fa-brands fa-tiktok text-sm"></i></a>
                     <a href="https://www.threads.net/@pmgpenang" target="_blank" rel="noopener noreferrer" class="hover:text-white transition" title="Threads PMGPP"><i class="fa-brands fa-threads text-sm"></i></a>
                 </div>
                 <span class="hidden sm:inline">|</span>
@@ -143,7 +156,7 @@
                     </button>
                 </div>
                 <span>|</span>
-                <!-- Tukar Mod Gelap/Terang -->
+                <!-- Tukar Mod Gelap -->
                 <button onclick="toggleDarkMode()" class="text-slate-300 hover:text-govGold-400 transition p-1" title="Tukar Mod Waktu">
                     <i id="dark-icon" class="fa-solid fa-moon"></i>
                 </button>
@@ -151,11 +164,10 @@
         </div>
     </div>
 
-    <!-- Header Utama / Banner Jenama -->
+    <!-- Header Utama -->
     <header class="bg-white dark:bg-slate-800 shadow-sm border-b dark:border-slate-700 transition-colors">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-4">
-                <!-- Lambang Akademik / Ikon Menara Gading -->
                 <div class="w-14 h-14 bg-gradient-to-tr from-blue-900 via-primary-800 to-govGold-600 rounded-2xl flex items-center justify-center text-govGold-400 text-2xl shadow-lg ring-2 ring-govGold-500/40 shrink-0">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
@@ -169,7 +181,7 @@
                 </div>
             </div>
 
-            <!-- Lencana Maklumat Ringkas -->
+            <!-- Lencana Ringkas -->
             <div class="hidden lg:flex items-center gap-6 text-sm border-l dark:border-slate-700 pl-6 text-slate-600 dark:text-slate-300">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-lg bg-primary-50 dark:bg-slate-700 text-primary-800 dark:text-govGold-400 flex items-center justify-center text-lg">
@@ -193,12 +205,12 @@
         </div>
     </header>
 
-    <!-- Bar Navigasi -->
+    <!-- Navigasi -->
     <nav class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b-2 border-govGold-500 text-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex items-center justify-between h-14">
                 
-                <!-- Pautan Navigasi Komputer -->
+                <!-- Desktop Links -->
                 <div class="hidden md:flex items-center space-x-1 text-sm font-medium">
                     <a href="#home" class="px-3 py-2 rounded hover:bg-slate-800 hover:text-govGold-400 transition text-govGold-400" data-i18n="nav_home">Laman Utama</a>
                     <a href="#about" class="px-3 py-2 rounded hover:bg-slate-800 hover:text-govGold-400 transition" data-i18n="nav_about">Tentang Kami</a>
@@ -210,9 +222,9 @@
                     <a href="#hubungi" class="px-3 py-2 rounded hover:bg-slate-800 hover:text-govGold-400 transition" data-i18n="nav_contact">Hubungi</a>
                 </div>
 
+                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center justify-between w-full">
                     <span class="text-xs uppercase font-bold tracking-widest text-govGold-400" data-i18n="menu_title">Menu Navigasi</span>
-                    <!-- Butang Menu Peranti Mudah Alih -->
                     <button onclick="toggleMobileMenu()" class="p-2 rounded hover:bg-slate-800 text-slate-200">
                         <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
                     </button>
@@ -220,7 +232,7 @@
             </div>
         </div>
 
-        <!-- Menu Dropdown Peranti Mudah Alih -->
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 px-4 pt-2 pb-4 space-y-1 text-sm">
             <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded hover:bg-slate-800 text-govGold-400" data-i18n="nav_home">Laman Utama</a>
             <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded hover:bg-slate-800" data-i18n="nav_about">Tentang Kami</a>
@@ -236,13 +248,11 @@
     <!-- Kandungan Utama -->
     <main class="flex-grow glass-main-bg">
 
-        <!-- Hero Section dengan Countdown Timer -->
+        <!-- Hero Section -->
         <section id="home" class="relative bg-slate-950 text-white min-h-[600px] flex items-center justify-center overflow-hidden">
-            <!-- Glow Cahaya Latar -->
             <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-govGold-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-            <!-- Lapisan Gambar Hero -->
             <div class="absolute inset-0 bg-cover bg-center opacity-25 scale-105 transform transition duration-1000" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop');"></div>
             <div class="absolute inset-0 hero-overlay"></div>
 
@@ -270,7 +280,7 @@
                     </a>
                 </div>
 
-                <!-- Seksyen Countdown PMGP26 -->
+                <!-- Seksyen Countdown -->
                 <div class="w-full max-w-3xl glass-card rounded-2xl p-6 shadow-2xl backdrop-blur-xl">
                     <div class="text-xs uppercase font-bold tracking-widest text-govGold-400 mb-3 flex items-center justify-center gap-2">
                         <i class="fa-solid fa-clock text-govGold-400"></i> <span data-i18n="countdown_title">Count Down Ke PMGPP 2026 (25 - 26 Julai 2026)</span>
@@ -316,7 +326,7 @@
             </div>
         </section>
 
-        <!-- Seksyen Tentang Kami -->
+        <!-- Tentang Kami -->
         <section id="about" class="py-16 transition-colors relative">
             <div class="max-w-7xl mx-auto px-4">
                 
@@ -347,12 +357,11 @@
                         </div>
                     </div>
 
-                    <!-- Kad Foto Aktiviti Utama -->
+                    <!-- Kad Aktiviti Utama -->
                     <div class="relative">
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 dark:border-slate-800 backdrop-blur-md">
                             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop" alt="Gambar Perkampungan Menara Gading Pulau Pinang" class="w-full h-80 object-cover">
                         </div>
-                        <!-- Lencana Lut Sinar Floating -->
                         <div class="absolute -bottom-6 -left-6 glass-card text-white p-6 rounded-2xl shadow-2xl hidden sm:block max-w-xs border border-white/20">
                             <i class="fa-solid fa-quote-left text-govGold-400 text-2xl mb-2"></i>
                             <p class="text-xs italic text-slate-300" data-i18n="quote_text">"Pemimpin hari ini, peneraju masa depan negara."</p>
@@ -360,7 +369,7 @@
                     </div>
                 </div>
 
-                <!-- Kad Visi & Misi -->
+                <!-- Visi & Misi -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                     <div class="p-8 rounded-3xl glass-card-light transition duration-300 hover:-translate-y-1 gold-border-top">
                         <div class="w-12 h-12 bg-primary-800/90 text-govGold-400 rounded-2xl flex items-center justify-center text-xl mb-4 shadow-md backdrop-blur-md">
@@ -421,7 +430,7 @@
             </div>
         </section>
 
-        <!-- Seksyen Program Utama -->
+        <!-- Program Utama -->
         <section id="program" class="py-16 transition-colors relative">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -432,14 +441,14 @@
                     <p class="text-slate-500 text-sm max-w-md mt-2 md:mt-0" data-i18n="programs_sub">Inisiatif berkelanjutan dan konvensyen tahunan mahasiswa kebangsaan.</p>
                 </div>
 
-                <!-- Kad Program Dinamik JS -->
+                <!-- Container Kad Program Dinamik -->
                 <div id="program-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Loading Placeholder -->
+                    <!-- Dimuatkan menerusi JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- Seksyen Video Highlight Rasmi PMGPP -->
+        <!-- Video Highlight PMGPP -->
         <section id="video-highlight" class="py-16 border-t border-b border-slate-200/50 dark:border-slate-800 bg-slate-950 text-white relative">
             <div class="max-w-7xl mx-auto px-4">
                 
@@ -448,385 +457,337 @@
                         <i class="fa-solid fa-video text-xs"></i> <span data-i18n="video_tag">VIDEO HIGHLIGHT RASMI</span>
                     </span>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-white mt-1" data-i18n="video_title">Sorotan Aktiviti &amp; Montaj PMGPP</h3>
-                    <p class="text-slate-400 text-sm mt-2" data-i18n="video_subtitle">Tonton rakaman kenangan, modul kepimpinan, dan suasana penuh semangat para peserta mahasiswa.</p>
+                    <p class="text-slate-400 text-sm mt-2" data-i18n="video_subtitle">Tonton rakaman kenangan rasmi Perkampungan Menara Gading Pulau Pinang dari YouTube dan pelbagai platform.</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
-                    <!-- Pemain Video HTML5 Utama -->
+                    <!-- Pemain Video Dinamik (Iframe YouTube / HTML5 Player) -->
                     <div class="lg:col-span-8 bg-slate-900 rounded-3xl p-3 border border-slate-800 shadow-2xl video-container backdrop-blur-xl">
-                        <div class="relative rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center group">
-                            <!-- Pemain Video Direct HTML5 -->
-                            <video id="main-video-player" controls preload="metadata" class="w-full h-full object-cover">
-                                <source src="AQP9q7P_kyBXKg1GNTXppC_IAl7m5Doe1SBCjWAU0vfetnscN90F3e1On7THBuohbXjXVUecJVgqTx-j0f6gygmW.mp4" type="video/mp4">
-                                Browser anda tidak menyokong elemen video HTML5.
+                        <div id="video-player-wrapper" class="relative rounded-2xl overflow-hidden bg-black aspect-video flex items-center justify-center group">
+                            
+                            <!-- Pemain Iframe YouTube -->
+                            <iframe id="main-youtube-player" src="https://www.youtube.com/embed/rKRK3GrGr7c?enablejsapi=1" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            
+                            <!-- Pemain Video HTML5 Tempatan (Sembunyi secara lalai) -->
+                            <video id="main-video-player" controls preload="none" poster="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop" onerror="handleVideoError()" class="w-full h-full object-cover hidden">
+                                <source id="video-source" src="" type="video/mp4">
+                                Penyemak imbas anda tidak menyokong elemen video HTML5.
                             </video>
-                        </div>
-                        
-                        <!-- Maklumat Video Aktiviti -->
-                        <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-800/80 mt-2">
-                            <div>
-                                <div class="flex items-center gap-2 mb-1">
-                                    <span class="px-2.5 py-0.5 rounded bg-govGold-500 text-slate-950 font-extrabold text-[10px] uppercase">
-                                        Sorotan Rasmi
-                                    </span>
-                                    <span class="text-xs text-slate-400"><i class="fa-regular fa-clock mr-1"></i> 2:17 Minit</span>
-                                </div>
-                                <h4 id="video-active-title" class="text-lg font-bold text-white">PMGPP 2022 - Kebersediaan Mahasiswa Merentasi Cabaran</h4>
-                                <p id="video-active-desc" class="text-xs text-slate-400 mt-0.5">Kompleks Rakan Muda, Seberang Perai Selatan (1 - 3 Julai 2022)</p>
-                            </div>
 
-                            <div class="flex items-center gap-2 shrink-0">
-                                <a href="https://www.instagram.com/tv/CfqQ3HkpFc0/?igsh=MXV2N2ZraXdqMmV4cA%3D%3D" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold text-xs transition flex items-center gap-2 shadow-md">
-                                    <i class="fa-brands fa-instagram text-sm"></i> <span>Tonton Di IG</span>
+                            <!-- Paparan Ralat Fallback -->
+                            <div id="video-fallback-ui" class="absolute inset-0 bg-slate-900/90 hidden flex-col items-center justify-center p-6 text-center z-10 backdrop-blur-sm">
+                                <div class="w-16 h-16 rounded-full bg-govGold-500/20 text-govGold-400 border border-govGold-500/30 flex items-center justify-center text-2xl mb-3 shadow-lg">
+                                    <i class="fa-solid fa-circle-play"></i>
+                                </div>
+                                <h5 class="text-base font-bold text-white mb-1">Pratinjau Video PMGPP</h5>
+                                <p class="text-xs text-slate-400 max-w-sm mb-4">Fail video boleh ditonton terus di pautan platform rasmi.</p>
+                                <a id="external-video-link" href="https://www.youtube.com/watch?v=rKRK3GrGr7c" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-govGold-500 hover:bg-govGold-600 text-slate-950 font-bold text-xs transition inline-flex items-center gap-1.5">
+                                    <i class="fa-brands fa-youtube text-red-600"></i> Tonton di YouTube
                                 </a>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Testimoni & Petikan Alumni daripada Video -->
-                    <div class="lg:col-span-4 space-y-6">
                         
-                        <!-- Kad Mesej Alumni -->
-                        <div class="glass-card p-6 rounded-3xl border border-white/10 relative overflow-hidden">
-                            <i class="fa-solid fa-quote-right text-5xl text-govGold-500/10 absolute top-4 right-4"></i>
-                            <span class="text-govGold-400 font-bold text-xs uppercase tracking-widest block mb-2" data-i18n="testimonial_tag">SUARA MAHASISWA</span>
-                            <p class="text-slate-300 text-xs md:text-sm leading-relaxed italic mb-4">
-                                "Menyertai PMGPP mengajar kami tentang kebersediaan fizikal dan mental untuk mendepani cabaran di alam universiti. Momen perpaduan, eksplorasi, dan latihan berpasukan ini tidak akan dilupakan."
-                            </p>
-                            <div class="flex items-center gap-3 pt-3 border-t border-slate-800">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-govGold-500 to-amber-600 text-slate-950 font-black flex items-center justify-center text-xs shadow">
-                                    M
+                        <!-- Bar Maklumat Video Aktiviti -->
+                        <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-800/80 mt-2">
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span id="video-active-badge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-red-600/20 text-red-400 border border-red-500/30">
+                                        <i class="fa-brands fa-youtube mr-1"></i> YouTube
+                                    </span>
+                                    <span id="video-active-channel" class="text-xs text-slate-400 font-medium">Saluran: Nusair Roslan</span>
                                 </div>
-                                <div>
-                                    <div class="font-bold text-white text-xs">Perwakilan Peserta PMGPP</div>
-                                    <div class="text-[10px] text-slate-400">Kompleks Rakan Muda SPS</div>
-                                </div>
+                                <h4 id="video-active-title" class="font-bold text-lg text-white">Video Perkampungan Menara Gading (PMG) Pulau Pinang 2016</h4>
+                                <p id="video-active-desc" class="text-xs text-slate-400 mt-1">Dokumentari rasmi dan kenangan manis program Perkampungan Menara Gading Pulau Pinang tahun 2016.</p>
                             </div>
-                        </div>
-
-                        <!-- Senarai Playlist Video Boleh Dipilih -->
-                        <div class="glass-card p-4 rounded-3xl border border-white/10">
-                            <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 px-1 flex items-center justify-between">
-                                <span>Pilihan Video Highlight</span>
-                                <i class="fa-solid fa-list-ul text-govGold-400"></i>
-                            </h5>
-                            
-                            <div class="space-y-2">
-                                <button onclick="switchVideo('AQP9q7P_kyBXKg1GNTXppC_IAl7m5Doe1SBCjWAU0vfetnscN90F3e1On7THBuohbXjXVUecJVgqTx-j0f6gygmW.mp4', 'PMGPP 2022 - Kebersediaan Mahasiswa Merentasi Cabaran', 'Kompleks Rakan Muda, Seberang Perai Selatan (1 - 3 Julai 2022)')" class="w-full text-left p-3 rounded-2xl bg-slate-800/90 border border-govGold-500/50 hover:bg-slate-700 transition flex items-center gap-3 group">
-                                    <div class="w-8 h-8 rounded-xl bg-govGold-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0">
-                                        <i class="fa-solid fa-play"></i>
-                                    </div>
-                                    <div class="overflow-hidden">
-                                        <div class="text-xs font-bold text-white group-hover:text-govGold-400 transition truncate">Montaj Utama PMGPP 2022</div>
-                                        <div class="text-[10px] text-slate-400 truncate">Video aktiviti penuh &amp; eksplorasi</div>
-                                    </div>
+                            <div class="flex items-center gap-2 shrink-0">
+                                <a id="video-direct-btn" href="https://www.youtube.com/watch?v=rKRK3GrGr7c" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-semibold rounded-xl transition flex items-center gap-1.5 shadow-md">
+                                    <i class="fa-brands fa-youtube"></i> <span>Buka Video</span>
+                                </a>
+                                <button onclick="copyVideoLink()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition flex items-center gap-1.5">
+                                    <i class="fa-solid fa-share-nodes text-govGold-400"></i> <span data-i18n="share_video">Kongsi</span>
                                 </button>
                             </div>
                         </div>
+                    </div>
 
+                    <!-- Senarai Playlist Sidebar Video -->
+                    <div class="lg:col-span-4 bg-slate-900/80 rounded-3xl p-5 border border-slate-800/90 backdrop-blur-md">
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-govGold-400 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-list-ul"></i> <span data-i18n="playlist_title">Senarai Video Pilihan</span>
+                        </h4>
+
+                        <div class="space-y-3" id="video-playlist-container">
+                            <!-- Dimuatkan menerusi JS -->
+                        </div>
                     </div>
 
                 </div>
-
             </div>
         </section>
 
-        <!-- Badan Penggerak / Organisasi Section -->
+        <!-- Executive Committee / Badan Penggerak -->
         <section id="organisasi" class="py-16 transition-colors">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <div class="max-w-2xl mx-auto mb-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
                     <span class="text-govGold-600 dark:text-govGold-400 font-bold text-xs uppercase tracking-widest" data-i18n="org_tag">CARTA ORGANISASI</span>
-                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white mt-2" data-i18n="org_title">Badan Penggerak PMGPP</h3>
-                    <p class="text-slate-500 text-sm mt-2" data-i18n="org_desc">Barisan Kepimpinan Tertinggi &amp; Exco Pelaksana Bagi Sesi 2025/2026</p>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white mt-1" data-i18n="org_title">Badan Penggerak PMGPP</h3>
+                    <p class="text-slate-500 text-sm mt-2" data-i18n="org_sub">Kepimpinan utama dan biro-biro yang memacu kejayaan aktiviti persatuan.</p>
                 </div>
 
-                <div id="committee-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Dynamic Committee Cards Populated via JS -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Member 1 -->
+                    <div class="p-6 rounded-3xl glass-card-light text-center border hover:border-govGold-500 transition duration-300">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-4 ring-govGold-500/30">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" alt="Ketua Pengarah" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Muhammad Farhan</h4>
+                        <p class="text-xs font-semibold text-govGold-600 dark:text-govGold-400 uppercase mt-0.5">Ketua Pengarah PMGPP</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Universiti Sains Malaysia (USM)</p>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="p-6 rounded-3xl glass-card-light text-center border hover:border-govGold-500 transition duration-300">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-4 ring-govGold-500/30">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=300&auto=format&fit=crop" alt="Timbalan Pengarah" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Nur Aishah Azman</h4>
+                        <p class="text-xs font-semibold text-govGold-600 dark:text-govGold-400 uppercase mt-0.5">Timbalan Pengarah</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Universiti Kebangsaan Malaysia (UKM)</p>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="p-6 rounded-3xl glass-card-light text-center border hover:border-govGold-500 transition duration-300">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-4 ring-govGold-500/30">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop" alt="Setiausaha Kerja" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Ahmad Danial</h4>
+                        <p class="text-xs font-semibold text-govGold-600 dark:text-govGold-400 uppercase mt-0.5">Setiausaha Kerja</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Universiti Malaya (UM)</p>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="p-6 rounded-3xl glass-card-light text-center border hover:border-govGold-500 transition duration-300">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 ring-4 ring-govGold-500/30">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop" alt="Bendahari Keseluruhan" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white">Siti Sarah Nabilah</h4>
+                        <p class="text-xs font-semibold text-govGold-600 dark:text-govGold-400 uppercase mt-0.5">Bendahari Keseluruhan</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Universiti Putra Malaysia (UPM)</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Galeri Section -->
-        <section id="galeri" class="py-16 transition-colors">
+        <!-- Galeri Foto Aktiviti -->
+        <section id="galeri" class="py-16 transition-colors border-t border-slate-200/60 dark:border-slate-800">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="text-govGold-600 dark:text-govGold-400 font-bold text-xs uppercase tracking-widest" data-i18n="gallery_tag">Lensa Aktiviti</span>
-                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white mt-1" data-i18n="gallery_title">Galeri Foto &amp; Acara</h3>
-                </div>
-
-                <!-- Gallery Grid -->
-                <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <!-- Dynamic Gallery Items Populated via JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Berita Terkini Section -->
-        <section id="berita" class="py-16 transition-colors">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="flex justify-between items-end mb-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
                     <div>
-                        <span class="text-govGold-600 dark:text-govGold-400 font-bold text-xs uppercase tracking-widest" data-i18n="news_tag">HEBAHAN RASMI</span>
-                        <h3 class="text-3xl font-bold text-slate-900 dark:text-white" data-i18n="news_title">Berita &amp; Pengumuman</h3>
+                        <span class="text-govGold-600 dark:text-govGold-400 font-bold text-xs uppercase tracking-widest" data-i18n="gallery_tag">MEMORI &amp; DOKUMENTASI</span>
+                        <h3 class="text-3xl font-bold text-slate-900 dark:text-white mt-1" data-i18n="gallery_title">Galeri Aktiviti PMGPP</h3>
+                    </div>
+
+                    <!-- Butang Penapis -->
+                    <div class="flex flex-wrap gap-2 mt-4 md:mt-0 text-xs font-semibold">
+                        <button onclick="filterGallery('all')" class="gallery-btn active px-4 py-2 rounded-xl bg-govGold-500 text-slate-950 shadow-md">Semua</button>
+                        <button onclick="filterGallery('kem')" class="gallery-btn px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-govGold-500 hover:text-slate-950 transition">Kem Kepimpinan</button>
+                        <button onclick="filterGallery('bengkel')" class="gallery-btn px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-govGold-500 hover:text-slate-950 transition">Bengkel Modul</button>
+                        <button onclick="filterGallery('komuniti')" class="gallery-btn px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-govGold-500 hover:text-slate-950 transition">Khidmat Komuniti</button>
                     </div>
                 </div>
 
-                <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Dynamic News Populated via JS -->
+                <!-- Grid Galeri -->
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Dimuatkan menerusi JS -->
                 </div>
             </div>
         </section>
 
-        <!-- Partner & Rakan Strategik Banner -->
-        <section class="py-12 border-t border-slate-200/50 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <div class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-6" data-i18n="partners_title">RAKAN STRATEGIK &amp; IPT NAUNGAN</div>
-                <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all">
-                    <span class="font-black text-xl text-slate-700 dark:text-slate-300">USM</span>
-                    <span class="font-black text-xl text-slate-700 dark:text-slate-300">UM</span>
-                    <span class="font-black text-xl text-slate-700 dark:text-slate-300">UKM</span>
-                    <span class="font-black text-xl text-slate-700 dark:text-slate-300">UTM</span>
-                    <span class="font-black text-xl text-slate-700 dark:text-slate-300">KPT</span>
-                    <span class="font-black text-xl text-slate-700 dark:text-slate-300">KBS</span>
+        <!-- Berita & Pengumuman -->
+        <section id="berita" class="py-16 transition-colors border-t border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="text-govGold-600 dark:text-govGold-400 font-bold text-xs uppercase tracking-widest" data-i18n="news_tag">PEMERITAHAN &amp; HEBAHAN</span>
+                        <h3 class="text-3xl font-bold text-slate-900 dark:text-white mt-1" data-i18n="news_title">Berita &amp; Pengumuman Terkini</h3>
+                    </div>
+                    <p class="text-slate-500 text-sm max-w-md mt-2 md:mt-0" data-i18n="news_sub">Ikuti liputan rasmi dan kemas kini aktiviti persatuan.</p>
+                </div>
+
+                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Dinamik menerusi JS -->
                 </div>
             </div>
         </section>
 
-        <!-- Pautan Kad Media Sosial -->
-        <section class="py-16 bg-gradient-to-b from-slate-950 via-govNavy/90 to-slate-950 text-white border-t border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-govGold-500/10 text-govGold-400 border border-govGold-500/30 text-xs font-bold uppercase tracking-widest mb-3 backdrop-blur-md">
-                    <i class="fa-solid fa-hashtag text-xs"></i> <span data-i18n="social_tag">RANGKAIAN MEDIA SOSIAL</span>
-                </div>
-                <h3 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3 text-white" data-i18n="social_title">
-                    Ikuti Perkembangan PMGPP
-                </h3>
-                <p class="max-w-2xl mx-auto text-slate-300 text-sm md:text-base mb-12 leading-relaxed" data-i18n="social_sub">
-                    Dapatkan liputan secara langsung, info program terkini, sorotan video, dan berita mahasiswa Pulau Pinang terus di saluran media sosial rasmi kami.
-                </p>
-
-                <!-- Social Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    <!-- Instagram Card -->
-                    <a href="https://www.instagram.com/pmgpenang?igsh=bGR2ZHZnc2syb3Iw" target="_blank" rel="noopener noreferrer" class="group relative bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-slate-900/80 p-8 rounded-3xl border border-pink-500/30 hover:border-pink-500 transition-all duration-300 shadow-xl hover:-translate-y-2 flex flex-col justify-between items-center text-center backdrop-blur-md">
-                        <div>
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white text-3xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition duration-300">
-                                <i class="fa-brands fa-instagram"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-1">Instagram</h4>
-                            <p class="text-xs text-pink-300 font-mono mb-3">@pmgpenang</p>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-6">Foto &amp; sorotan acara rasmi, aktiviti kebajikan serta perhimpunan mahasiswa.</p>
-                        </div>
-                        <span class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold text-xs tracking-wider uppercase shadow-md group-hover:shadow-pink-500/30 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-user-plus"></i> <span data-i18n="follow_ig">Follow Instagram</span>
-                        </span>
-                    </a>
-
-                    <!-- TikTok Card -->
-                    <a href="https://www.tiktok.com/@pmg.pulau.pinang?_r=1&_t=ZS-985yzUeVIJg" target="_blank" rel="noopener noreferrer" class="group relative bg-slate-900/80 p-8 rounded-3xl border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 shadow-xl hover:-translate-y-2 flex flex-col justify-between items-center text-center backdrop-blur-md">
-                        <div>
-                            <div class="w-16 h-16 rounded-2xl bg-slate-950 text-white text-3xl flex items-center justify-center mx-auto mb-4 shadow-lg border border-cyan-500/50 group-hover:scale-110 transition duration-300 relative">
-                                <i class="fa-brands fa-tiktok text-cyan-400"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-1">TikTok</h4>
-                            <p class="text-xs text-cyan-300 font-mono mb-3">@pmg.pulau.pinang</p>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-6">Kandungan video kreatif, momen di sebalik tabir, dan aktiviti sukan belia.</p>
-                        </div>
-                        <span class="w-full py-2.5 px-4 rounded-xl bg-slate-800 border border-cyan-500/50 text-cyan-300 font-bold text-xs tracking-wider uppercase shadow-md group-hover:bg-cyan-500 group-hover:text-slate-950 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-play"></i> <span data-i18n="follow_tiktok">Follow TikTok</span>
-                        </span>
-                    </a>
-
-                    <!-- Threads Card -->
-                    <a href="https://www.threads.net/@pmgpenang" target="_blank" rel="noopener noreferrer" class="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 p-8 rounded-3xl border border-slate-700 hover:border-govGold-400 transition-all duration-300 shadow-xl hover:-translate-y-2 flex flex-col justify-between items-center text-center backdrop-blur-md">
-                        <div>
-                            <div class="w-16 h-16 rounded-2xl bg-white text-slate-950 text-3xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition duration-300">
-                                <i class="fa-brands fa-threads"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-1">Threads</h4>
-                            <p class="text-xs text-govGold-400 font-mono mb-3">@pmgpenang</p>
-                            <p class="text-xs text-slate-300 leading-relaxed mb-6">Wacana kepimpinan, perbincangan isu mahasiswa, dan maklum balas rasmi.</p>
-                        </div>
-                        <span class="w-full py-2.5 px-4 rounded-xl bg-white text-slate-950 font-bold text-xs tracking-wider uppercase shadow-md hover:bg-govGold-400 transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-at"></i> <span data-i18n="follow_threads">Follow Threads</span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Arkib & Hubungi Section -->
-        <section id="arkib" class="py-16 bg-slate-950/90 text-white border-t border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Arkib Section -->
-                <div>
-                    <h4 class="text-xl font-bold text-white mb-4 border-b border-slate-800 pb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-box-archive text-govGold-400"></i> <span data-i18n="archive_title">Arkib Dokumen &amp; Laporan</span>
-                    </h4>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-govGold-500/50 transition backdrop-blur-md">
-                            <span>Laporan Tahunan 2025.pdf</span>
-                            <button onclick="showModalInfo('Laporan Tahunan 2025', 'Muat turun dokumen laporan kewangan dan aktiviti tahunan PMGPP 2025.')" class="text-govGold-400 hover:underline flex items-center gap-1"><i class="fa-solid fa-download"></i> Muat Turun</button>
-                        </li>
-                        <li class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-govGold-500/50 transition backdrop-blur-md">
-                            <span>Buku Panduan Perlembagaan.pdf</span>
-                            <button onclick="showModalInfo('Buku Perlembagaan', 'Muat turun draf undang-undang dan aturan mesyuarat rasmi PMGPP.')" class="text-govGold-400 hover:underline flex items-center gap-1"><i class="fa-solid fa-download"></i> Muat Turun</button>
-                        </li>
-                        <li class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-govGold-500/50 transition backdrop-blur-md">
-                            <span>Minit Mesyuarat Agung 2024.pdf</span>
-                            <button onclick="showModalInfo('Minit Mesyuarat Agung', 'Muat turun rekod ketetapan Mesyuarat Agung Tahunan PMGPP.')" class="text-govGold-400 hover:underline flex items-center gap-1"><i class="fa-solid fa-download"></i> Muat Turun</button>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Hubungi Form & Info -->
-                <div id="hubungi" class="lg:col-span-2">
-                    <h4 class="text-xl font-bold text-white mb-4 border-b border-slate-800 pb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane text-govGold-400"></i> <span data-i18n="contact_title">Hubungi Urusetia PMGPP</span>
-                    </h4>
+        <!-- Hubungi Kami & Maklum Balas -->
+        <section id="hubungi" class="py-16 transition-colors relative border-t border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     
-                    <form onsubmit="handleContactSubmit(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                        <input type="text" placeholder="Nama Penuh" required class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white focus:outline-none focus:border-govGold-400 backdrop-blur-md">
-                        <input type="email" placeholder="E-mel Rasmi (sukpmgpp@gmail.com)" required class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white focus:outline-none focus:border-govGold-400 backdrop-blur-md">
-                        <input type="text" placeholder="Subjek / IPT" required class="md:col-span-2 p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white focus:outline-none focus:border-govGold-400 backdrop-blur-md">
-                        <textarea rows="3" placeholder="Mesej anda..." required class="md:col-span-2 p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white focus:outline-none focus:border-govGold-400 backdrop-blur-md"></textarea>
-                        <button type="submit" class="md:col-span-2 py-3.5 bg-govGold-500 hover:bg-govGold-600 text-slate-950 font-bold rounded-xl transition shadow-lg shadow-govGold-500/20" data-i18n="btn_send">Hantar Mesej</button>
-                    </form>
+                    <!-- Butiran Hubungan -->
+                    <div class="p-8 rounded-3xl glass-card-light">
+                        <span class="text-govGold-600 dark:text-govGold-400 font-bold text-xs uppercase tracking-widest" data-i18n="contact_tag">HUBUNGI KAMI</span>
+                        <h3 class="text-3xl font-bold text-slate-900 dark:text-white mt-2 mb-6" data-i18n="contact_title">Ibu Pejabat PMGPP</h3>
+                        
+                        <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-8" data-i18n="contact_desc">
+                            Mempunyai sebarang pertanyaan mengenai pendaftaran, penajaan, atau kerjasama program? Sila hubungi urus setia kami.
+                        </p>
+
+                        <div class="space-y-6 text-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-govGold-500/10 text-govGold-500 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 dark:text-white" data-i18n="addr_label">Alamat Utama</h5>
+                                    <p class="text-slate-600 dark:text-slate-300 text-xs mt-1">Kompleks Mahasiswa Universiti Sains Malaysia (USM), 11800 Gelugor, Pulau Pinang, Malaysia.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-govGold-500/10 text-govGold-500 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 dark:text-white">E-mel Rasmi</h5>
+                                    <p class="text-slate-600 dark:text-slate-300 text-xs mt-1">sukpmgpp@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-govGold-500/10 text-govGold-500 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-slate-900 dark:text-white" data-i18n="hotline_label">Talian Urus Setia</h5>
+                                    <p class="text-slate-600 dark:text-slate-300 text-xs mt-1">+60 19-481 2026 / +60 12-345 6789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Borang Interaktif -->
+                    <div class="p-8 rounded-3xl glass-card-light">
+                        <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-6" data-i18n="form_title">Borang Pertanyaan &amp; Maklum Balas</h4>
+                        
+                        <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-600 dark:text-slate-300 mb-1" data-i18n="form_name">Nama Penuh</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-govGold-500" placeholder="Ahmad Bin Abdullah">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-600 dark:text-slate-300 mb-1" data-i18n="form_email">E-mel Mahasiswa/Pengguna</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-govGold-500" placeholder="nama@email.com">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-600 dark:text-slate-300 mb-1" data-i18n="form_subject">Subjek</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-govGold-500" placeholder="Pertanyaan Pendaftaran PMGPP 2026">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-600 dark:text-slate-300 mb-1" data-i18n="form_message">Mesej Anda</label>
+                                <textarea rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-govGold-500" placeholder="Tulis mesej atau pertanyaan anda di sini..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 bg-govGold-500 hover:bg-govGold-600 text-slate-950 font-bold rounded-xl transition shadow-md flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> <span data-i18n="form_btn">Hantar Mesej</span>
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer Rasmi Portal -->
-    <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-800 py-10">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div class="space-y-3">
-                <div class="flex items-center gap-2 text-white font-bold text-base">
-                    <div class="w-8 h-8 rounded bg-govGold-500 text-slate-950 flex items-center justify-center font-black">P</div>
-                    PORTAL RASMI PMGPP
+    <!-- Footer -->
+    <footer class="bg-govNavy text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-sm">
+            
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 text-white font-bold text-lg mb-3">
+                    <i class="fa-solid fa-graduation-cap text-govGold-500"></i> PMGPP PULAU PINANG
                 </div>
-                <p class="leading-relaxed">
-                    Sistem Maklumat &amp; Portal Rasmi Perkampungan Menara Gading Pulau Pinang. Hak Cipta Terpelihara.
+                <p class="text-xs text-slate-400 leading-relaxed max-w-sm" data-i18n="footer_about">
+                    Perkampungan Menara Gading Pulau Pinang merupakan organisasi pembangunan kepimpinan dan kebajikan mahasiswa tertinggi daerah Pulau Pinang.
                 </p>
-
-                <!-- Pautan Media Sosial Footer -->
-                <div class="pt-2">
-                    <div class="text-[10px] text-govGold-400 font-bold uppercase tracking-wider mb-2" data-i18n="follow_us">Ikuti Media Sosial Rasmi:</div>
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <a href="https://www.instagram.com/pmgpenang?igsh=bGR2ZHZnc2syb3Iw" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-pink-600/20 hover:bg-pink-600 border border-pink-500/40 text-pink-300 hover:text-white transition flex items-center gap-1.5 font-semibold">
-                            <i class="fa-brands fa-instagram text-sm"></i> Instagram
-                        </a>
-                        <a href="https://www.tiktok.com/@pmg.pulau.pinang?_r=1&_t=ZS-985yzUeVIJg" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cyan-950 hover:bg-cyan-600 border border-cyan-500/40 text-cyan-300 hover:text-slate-950 transition flex items-center gap-1.5 font-semibold">
-                            <i class="fa-brands fa-tiktok text-sm"></i> TikTok
-                        </a>
-                        <a href="https://www.threads.net/@pmgpenang" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-white border border-slate-700 text-slate-200 hover:text-slate-950 transition flex items-center gap-1.5 font-semibold">
-                            <i class="fa-brands fa-threads text-sm"></i> Threads
-                        </a>
-                    </div>
-                </div>
             </div>
 
             <div>
-                <h5 class="text-white font-bold mb-3 uppercase tracking-wider" data-i18n="pautan_pantas">Pautan Pantas</h5>
-                <ul class="space-y-2">
-                    <li><a href="#about" class="hover:text-govGold-400 transition">Mengenai PMGPP</a></li>
-                    <li><a href="#program" class="hover:text-govGold-400 transition">Kalendar Program</a></li>
-                    <li><a href="#video-highlight" class="hover:text-govGold-400 transition">Sorotan Video</a></li>
-                    <li><a href="#organisasi" class="hover:text-govGold-400 transition">Carta Organisasi</a></li>
-                    <li><a href="#berita" class="hover:text-govGold-400 transition">Hebahan Terbaru</a></li>
+                <h5 class="font-bold text-white mb-3 uppercase text-xs tracking-wider" data-i18n="footer_links">Pautan Pantas</h5>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#about" class="hover:text-govGold-400 transition" data-i18n="nav_about">Tentang Kami</a></li>
+                    <li><a href="#program" class="hover:text-govGold-400 transition" data-i18n="nav_program">Program Utama</a></li>
+                    <li><a href="#organisasi" class="hover:text-govGold-400 transition" data-i18n="nav_org">Badan Penggerak</a></li>
+                    <li><a href="#berita" class="hover:text-govGold-400 transition" data-i18n="nav_news">Berita Terkini</a></li>
                 </ul>
             </div>
 
             <div>
-                <h5 class="text-white font-bold mb-3 uppercase tracking-wider" data-i18n="lokasi_title">E-mel &amp; Urusetia</h5>
-                <p class="leading-relaxed space-y-1">
-                    <span class="block text-white font-medium"><i class="fa-solid fa-envelope text-govGold-400 mr-1.5"></i> sukpmgpp@gmail.com</span>
-                    <span class="block mt-2">Kompleks Mahasiswa,<br>Pulau Pinang, Malaysia.</span>
-                </p>
-            </div>
-
-            <div>
-                <h5 class="text-white font-bold mb-3 uppercase tracking-wider" data-i18n="visitor_stats">Statistik Pelawat</h5>
-                <div class="bg-slate-900 p-3 rounded border border-slate-800 space-y-1">
-                    <div class="flex justify-between"><span>Jumlah Pelawat:</span> <span class="text-white font-mono font-bold">124,592</span></div>
-                    <div class="flex justify-between"><span>Hari Ini:</span> <span class="text-white font-mono font-bold">1,240</span></div>
-                    <div class="flex justify-between"><span>Pelawat Dalam Talian:</span> <span class="text-emerald-400 font-mono font-bold">42</span></div>
+                <h5 class="font-bold text-white mb-3 uppercase text-xs tracking-wider" data-i18n="footer_social">Media Sosial</h5>
+                <div class="flex gap-3 text-lg">
+                    <a href="https://www.instagram.com/pmgpenang" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@pmg.pulau.pinang" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.threads.net/@pmgpenang" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-white hover:text-slate-900 transition"><i class="fa-brands fa-threads"></i></a>
                 </div>
             </div>
+
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
-            <div>
-                &copy; 2026 PMGPP Official. Hak Cipta Terpelihara.
-            </div>
-            <div>
-                Disokong oleh GitHub Pages Deployment
-            </div>
+        <div class="max-w-7xl mx-auto px-4 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+            <p>&copy; 2026 Perkampungan Menara Gading Pulau Pinang (PMGPP). Hak Cipta Terpelihara.</p>
+            <p class="mt-2 sm:mt-0" data-i18n="footer_tagline">Dikuasakan oleh Urus Setia PMGPP</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" onclick="scrollToTop()" class="fixed bottom-6 right-6 z-40 bg-govGold-500 hover:bg-govGold-600 text-slate-950 p-3.5 rounded-full shadow-2xl hidden transition duration-300">
-        <i class="fa-solid fa-arrow-up text-lg"></i>
-    </button>
-
-    <!-- Modal Carian Dynamic -->
-    <div id="search-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-start justify-center pt-20 px-4 hidden">
-        <div class="bg-white dark:bg-slate-800 w-full max-w-2xl rounded-2xl shadow-2xl p-6 border border-slate-200 dark:border-slate-700">
-            <div class="flex justify-between items-center pb-4 border-b border-slate-200 dark:border-slate-700">
-                <h3 class="font-bold text-lg dark:text-white flex items-center gap-2">
-                    <i class="fa-solid fa-magnifying-glass text-govGold-500"></i> Carian Portal PMGPP
-                </h3>
-                <button onclick="toggleSearchModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+    <!-- Search Modal -->
+    <div id="search-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 w-full max-w-xl rounded-3xl p-6 shadow-2xl text-white">
+            <div class="flex items-center justify-between mb-4">
+                <h4 class="font-bold text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass text-govGold-400"></i> <span data-i18n="search_title">Carian Portal PMGPP</span>
+                </h4>
+                <button onclick="toggleSearchModal()" class="text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="mt-4">
-                <input type="text" id="search-input" onkeyup="performSearch()" placeholder="Taip kata kunci (cth: 2022, White Resort, IPGKPP, Madani)..." class="w-full p-3 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 dark:text-white focus:outline-none">
-            </div>
-            <div id="search-results" class="mt-4 max-h-60 overflow-y-auto space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                <p class="text-xs text-slate-400 italic">Masukkan sekurang-kurangnya 2 abjad untuk mula mencari...</p>
+            <input id="search-input" type="text" onkeyup="performSearch()" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-govGold-500 text-white mb-4" placeholder="Taip kata kunci (cth: Kem, Pendaftaran, USM, Bengkel, 2016)...">
+            <div id="search-results" class="max-h-60 overflow-y-auto space-y-2 text-xs text-slate-300">
+                <p class="text-slate-500 text-center py-4">Masukkan kata kunci carian di atas.</p>
             </div>
         </div>
     </div>
 
-    <!-- Modal Info Pop-up (Gantian Alert Native) -->
-    <div id="info-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-        <div class="bg-white dark:bg-slate-800 w-full max-w-md rounded-2xl shadow-2xl p-6 border border-slate-200 dark:border-slate-700 text-center">
-            <div class="w-12 h-12 bg-govGold-500/20 text-govGold-500 rounded-full flex items-center justify-center text-xl mx-auto mb-3">
-                <i class="fa-solid fa-circle-info"></i>
-            </div>
-            <h4 id="info-modal-title" class="text-lg font-bold text-slate-900 dark:text-white mb-2">Maklumat</h4>
-            <p id="info-modal-body" class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6"></p>
-            <button onclick="closeModalInfo()" class="w-full py-2.5 bg-govGold-500 hover:bg-govGold-600 text-slate-950 font-bold rounded-xl text-xs transition">
-                Tutup
-            </button>
+    <!-- Gallery Lightbox Modal -->
+    <div id="gallery-modal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-lg hidden items-center justify-center p-4">
+        <button onclick="closeGalleryModal()" class="absolute top-6 right-6 text-white text-3xl hover:text-govGold-400 transition"><i class="fa-solid fa-xmark"></i></button>
+        <div class="max-w-4xl w-full text-center">
+            <img id="modal-img" src="" alt="Gallery Image Preview" class="max-h-[75vh] mx-auto rounded-2xl shadow-2xl border-2 border-white/20">
+            <p id="modal-caption" class="text-white font-medium text-sm mt-4"></p>
         </div>
     </div>
 
-    <!-- Lightbox Modal untuk Galeri Foto -->
-    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 hidden" onclick="closeLightbox()">
-        <div class="max-w-4xl max-h-[90vh] relative">
-            <img id="lightbox-img" src="" alt="Zoom Foto" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl">
-            <p id="lightbox-caption" class="text-center text-white text-sm mt-3 font-medium"></p>
-        </div>
-    </div>
-
-    <!-- Toast Notification Element -->
-    <div id="toast" class="fixed bottom-6 left-6 z-50 bg-slate-900 text-white border border-govGold-500 px-5 py-3 rounded-2xl shadow-2xl transition duration-500 transform translate-y-20 opacity-0 flex items-center gap-3 text-xs font-semibold">
-        <i class="fa-solid fa-circle-check text-govGold-400 text-base"></i>
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-govGold-500 text-slate-950 px-6 py-3.5 rounded-2xl shadow-2xl font-bold text-sm hidden items-center gap-3 border border-amber-300 transform transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-lg"></i>
         <span id="toast-message">Mesej berjaya dihantar!</span>
     </div>
 
-    <!-- Skrip Logic JavaScript -->
+    <!-- Logik Aplikasi JavaScript -->
     <script>
-        /* Kamus Bahasa (BM & EN) */
-        const translations = {
+        // Kamus Pemindahan Bahasa
+        const i18n = {
             bm: {
                 loading: "Memuatkan Portal Rasmi...",
                 top_portal_label: "Portal Rasmi Perkampungan Menara Gading Pulau Pinang",
-                sub_title: "Portal Maklumat & Pembangunan Belia IPT",
                 search: "Carian",
+                sub_title: "Portal Maklumat & Pembangunan Belia IPT",
+                next_event_label: "Acara Utama",
+                membership: "Keahlian Aktif",
+                menu_title: "Menu Navigasi",
                 nav_home: "Laman Utama",
                 nav_about: "Tentang Kami",
                 nav_program: "Program Utama",
@@ -835,7 +796,6 @@
                 nav_video: "Video Highlight",
                 nav_news: "Berita",
                 nav_contact: "Hubungi",
-                menu_title: "Menu Navigasi",
                 welcome_badge: "Selamat Datang Ke Portal Rasmi",
                 hero_desc: "Wadah kepimpinan, perpaduan, dan pembangunan sahsiah mahasiswa universiti di seluruh Malaysia secara profesional dan berintegriti.",
                 cta_about: "Tentang Kami",
@@ -845,8 +805,6 @@
                 hours: "Jam",
                 minutes: "Minit",
                 seconds: "Saat",
-                next_event_label: "Acara Utama",
-                membership: "Keahlian Aktif",
                 stat_participants: "Peserta Berdaftar",
                 stat_universities: "Universiti & IPTA/IPTS",
                 stat_years: "Tahun Kecemerlangan",
@@ -872,73 +830,77 @@
                 programs_tag: "TAHUNAN & SIKLUS",
                 programs_title: "Program Utama PMGPP",
                 programs_sub: "Inisiatif berkelanjutan dan konvensyen tahunan mahasiswa kebangsaan.",
-                org_tag: "CARTA ORGANISASI",
-                org_title: "Badan Penggerak PMGPP",
-                org_desc: "Barisan Kepimpinan Tertinggi & Exco Pelaksana Bagi Sesi 2025/2026",
-                gallery_tag: "Lensa Aktiviti",
-                gallery_title: "Galeri Foto & Acara",
                 video_tag: "VIDEO HIGHLIGHT RASMI",
                 video_title: "Sorotan Aktiviti & Montaj PMGPP",
                 video_subtitle: "Tonton rakaman kenangan, modul kepimpinan, dan suasana penuh semangat para peserta mahasiswa.",
-                testimonial_tag: "SUARA MAHASISWA",
-                news_tag: "HEBAHAN RASMI",
-                news_title: "Berita & Pengumuman",
-                partners_title: "RAKAN STRATEGIK & IPT NAUNGAN",
-                social_tag: "RANGKAIAN MEDIA SOSIAL",
-                social_title: "Ikuti Perkembangan PMGPP",
-                social_sub: "Dapatkan liputan secara langsung, info program terkini, sorotan video, dan berita mahasiswa Pulau Pinang terus di saluran media sosial rasmi kami.",
-                follow_ig: "Follow Instagram",
-                follow_tiktok: "Follow TikTok",
-                follow_threads: "Follow Threads",
-                follow_us: "Ikuti Media Sosial Rasmi:",
-                archive_title: "Arkib Dokumen & Laporan",
-                contact_title: "Hubungi Urusetia PMGPP",
-                btn_send: "Hantar Mesej",
-                pautan_pantas: "Pautan Pantas",
-                lokasi_title: "E-mel & Urusetia",
-                visitor_stats: "Statistik Pelawat"
+                share_video: "Kongsi",
+                playlist_title: "Senarai Video Pilihan",
+                org_tag: "CARTA ORGANISASI",
+                org_title: "Badan Penggerak PMGPP",
+                org_sub: "Kepimpinan utama dan biro-biro yang memacu kejayaan aktiviti persatuan.",
+                gallery_tag: "MEMORI & DOKUMENTASI",
+                gallery_title: "Galeri Aktiviti PMGPP",
+                news_tag: "PEMERITAHAN & HEBAHAN",
+                news_title: "Berita & Pengumuman Terkini",
+                news_sub: "Ikuti liputan rasmi dan kemas kini aktiviti persatuan.",
+                contact_tag: "HUBUNGI KAMI",
+                contact_title: "Ibu Pejabat PMGPP",
+                contact_desc: "Mempunyai sebarang pertanyaan mengenai pendaftaran, penajaan, atau kerjasama program? Sila hubungi urus setia kami.",
+                addr_label: "Alamat Utama",
+                hotline_label: "Talian Urus Setia",
+                form_title: "Borang Pertanyaan & Maklum Balas",
+                form_name: "Nama Penuh",
+                form_email: "E-mel Mahasiswa/Pengguna",
+                form_subject: "Subjek",
+                form_message: "Mesej Anda",
+                form_btn: "Hantar Mesej",
+                footer_about: "Perkampungan Menara Gading Pulau Pinang merupakan organisasi pembangunan kepimpinan dan kebajikan mahasiswa tertinggi daerah Pulau Pinang.",
+                footer_links: "Pautan Pantas",
+                footer_social: "Media Sosial",
+                footer_tagline: "Dikuasakan oleh Urus Setia PMGPP",
+                search_title: "Carian Portal PMGPP"
             },
             en: {
                 loading: "Loading Official Portal...",
-                top_portal_label: "Official Portal of Perkampungan Menara Gading Pulau Pinang",
-                sub_title: "Information Portal & Higher Ed Youth Development",
+                top_portal_label: "Official Portal of Penang Menara Gading Camp",
                 search: "Search",
+                sub_title: "Information & Youth Development Portal",
+                next_event_label: "Main Event",
+                membership: "Active Membership",
+                menu_title: "Navigation Menu",
                 nav_home: "Home",
                 nav_about: "About Us",
-                nav_program: "Main Programs",
+                nav_program: "Key Programs",
                 nav_org: "Committee",
                 nav_gallery: "Gallery",
-                nav_video: "Video Highlight",
+                nav_video: "Video Highlights",
                 nav_news: "News",
                 nav_contact: "Contact",
-                menu_title: "Navigation Menu",
-                welcome_badge: "Welcome To Official Portal",
-                hero_desc: "A platform for leadership, unity, and holistic development for university students built on integrity.",
+                welcome_badge: "Welcome to Official Portal",
+                hero_desc: "Platform for leadership, unity, and holistic character building among university students across Malaysia with integrity.",
                 cta_about: "About Us",
                 cta_video: "Watch Video Montage",
-                countdown_title: "Countdown to PMGP2026 Grand Convention (25 July 2026)",
+                countdown_title: "Count Down To PMGPP 2026 (25 - 26 July 2026)",
                 days: "Days",
                 hours: "Hours",
                 minutes: "Mins",
                 seconds: "Secs",
-                next_event_label: "Main Event",
-                membership: "Active Members",
-                stat_participants: "Registered Attendees",
+                stat_participants: "Registered Participants",
                 stat_universities: "Universities & Colleges",
                 stat_years: "Years of Excellence",
                 about_tag: "ABOUT PMGPP",
-                about_title: "Center of Student Leadership & Excellence",
-                about_p1: "Perkampungan Menara Gading Pulau Pinang (PMGPP) is a platform designed to train future university students to be dynamic and progressive in preparation for future leadership.",
-                about_p2: "This aspiration is pursued by placing the tradition of knowledge culture as a vital prerequisite in building superior character, a resilient nation, and high civilization.",
-                about_check1: "Officially Constituted",
+                about_title: "Center of Student Excellence & Leadership",
+                about_p1: "Penang Menara Gading Camp (PMGPP) is a structured platform designed to train future university students to be dynamic and progressive in preparation for future leadership.",
+                about_p2: "This aspiration is pursued by embedding knowledge culture as an essential prerequisite in constructing sound character and elevated civilization.",
+                about_check1: "Officially Recognized",
                 about_check2: "National Alumni Network",
                 quote_text: '"Today\'s leaders, tomorrow\'s nation builders."',
                 vision_title: "Our Vision",
-                vision_desc: "To be the premier student association empowering knowledgeable, ethical, and visionary leaders capable of guiding society.",
+                vision_desc: "To be the premier student association producing knowledgeable, ethical individuals capable of leading society towards continuous progress.",
                 mission_title: "Our Mission",
-                mission_desc: "To offer effective leadership platforms, execute high-impact initiatives, and strengthen welfare support networks across higher learning institutions.",
-                core_values_title: "PMGPP Core Values",
-                core_values_subtitle: "Fundamental principles guiding all organizational endevours",
+                mission_desc: "Provide effective leadership platforms, host high-impact programs, and strengthen welfare networks for higher education students.",
+                core_values_title: "Core Values of PMGPP",
+                core_values_subtitle: "Fundamental principles guiding all organizational efforts",
                 val_1: "Leadership",
                 val_2: "Integrity",
                 val_3: "Volunteerism",
@@ -946,404 +908,451 @@
                 val_5: "Unity",
                 val_6: "Innovation",
                 programs_tag: "ANNUAL & CYCLES",
-                programs_title: "PMGPP Key Programs",
-                programs_sub: "Sustainable initiatives and national student annual conventions.",
+                programs_title: "Key PMGPP Programs",
+                programs_sub: "Sustainable initiatives and annual national student conventions.",
+                video_tag: "OFFICIAL VIDEO HIGHLIGHTS",
+                video_title: "Activity Highlights & PMGPP Montage",
+                video_subtitle: "Watch memories, leadership modules, and vibrant energy from student delegates.",
+                share_video: "Share",
+                playlist_title: "Featured Video Playlist",
                 org_tag: "ORGANIZATION CHART",
-                org_title: "Executive Committee",
-                org_desc: "Supreme Council & Exco Lineup for Session 2025/2026",
-                gallery_tag: "Activity Lens",
-                gallery_title: "Photo & Event Gallery",
-                video_tag: "OFFICIAL VIDEO HIGHLIGHT",
-                video_title: "PMGPP Activity Highlights & Montage",
-                video_subtitle: "Watch video highlights, leadership modules, and vibrant student moments.",
-                testimonial_tag: "STUDENT VOICE",
-                news_tag: "OFFICIAL ANNOUNCEMENTS",
-                news_title: "News & Bulletins",
-                partners_title: "STRATEGIC PARTNERS & UNIVERSITIES",
-                social_tag: "SOCIAL MEDIA NETWORK",
-                social_title: "Follow PMGPP Online",
-                social_sub: "Get live coverage, latest updates, video highlights, and Penang student news directly on our official channels.",
-                follow_ig: "Follow Instagram",
-                follow_tiktok: "Follow TikTok",
-                follow_threads: "Follow Threads",
-                follow_us: "Official Social Media:",
-                archive_title: "Document & Report Archive",
-                contact_title: "Contact PMGPP Secretariat",
-                btn_send: "Send Message",
-                pautan_pantas: "Quick Links",
-                lokasi_title: "Email & Secretariat",
-                visitor_stats: "Visitor Analytics"
+                org_title: "PMGPP Working Committee",
+                org_sub: "Core leadership and bureaus steering the association's success.",
+                gallery_tag: "MEMORIES & DOCUMENTATION",
+                gallery_title: "PMGPP Activity Gallery",
+                news_tag: "NEWS & ANNOUNCEMENTS",
+                news_title: "Latest News & Updates",
+                news_sub: "Follow official coverage and event updates from the committee.",
+                contact_tag: "CONTACT US",
+                contact_title: "PMGPP Headquarters",
+                contact_desc: "Have inquiries regarding registration, sponsorship, or program collaboration? Contact our secretariat.",
+                addr_label: "Primary Address",
+                hotline_label: "Secretariat Hotline",
+                form_title: "Inquiry & Feedback Form",
+                form_name: "Full Name",
+                form_email: "Student/User Email",
+                form_subject: "Subject",
+                form_message: "Your Message",
+                form_btn: "Send Message",
+                footer_about: "Penang Menara Gading Camp is the peak student leadership and welfare organization in Penang state.",
+                footer_links: "Quick Links",
+                footer_social: "Social Media",
+                footer_tagline: "Powered by PMGPP Secretariat",
+                search_title: "Search PMGPP Portal"
             }
         };
 
-        /* Data Program Rasmi PMGPP */
-        const programData = [
+        // Model Data Program
+        const programsData = [
             {
-                title: "PMGPP 2026",
-                subtitle: "Mahasiswa Bitara : Peneraju Harapan Nusa Bangsa",
-                badge: "Akan Datang",
+                id: "prog1",
+                title: "Kem Kepimpinan PMGPP 2026",
+                category: "Kem Tahunan",
                 date: "25 - 26 Julai 2026",
-                location: "White Resort Camp, Balik Pulau, Pulau Pinang",
-                image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop"
+                desc: "Himpunan tahunan kemuncak melibatkan modul bina insan, simulasi pengurusan organisasi, dan aktiviti motivasi.",
+                img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop"
             },
             {
-                title: "PMGPP 2025",
-                subtitle: "Mahasiswa Bitara: Melahirkan Generasi Madani",
-                badge: "Selesai",
-                date: "13 - 15 Jun 2025",
-                location: "Institut Pendidikan Guru Kampus Pulau Pinang (IPGKPP)",
-                image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop"
+                id: "prog2",
+                title: "Bengkel Modul Akademik & IPT",
+                category: "Bengkel & Latihan",
+                date: "Berkala (Setiap Bulan)",
+                desc: "Inisiatif bimbingan kemasukan ke Universiti Awam, persediaan biasiswa, dan kemahiran akademik.",
+                img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop"
             },
             {
-                title: "PMG UTARA 2024",
-                subtitle: "Mahasiswa Madani: Budaya Ilmu Memicu Generasi Progresif",
-                badge: "Selesai",
-                date: "31 Mei - 2 Jun 2024",
-                location: "Institut Pendidikan Guru Kampus Pulau Pinang (IPGKPP)",
-                image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "PMGPP 2023",
-                subtitle: "Jati Diri Bitara Membina Mahasiswa Dinamik",
-                badge: "Selesai",
-                date: "16 - 18 Jun 2023",
-                location: "Kompleks Rakan Muda, SPS Sungai Jawi",
-                image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop"
-            },
-            {
-                title: "PMGPP 2022",
-                subtitle: "Kebersediaan Mahasiswa Merentasi Cabaran",
-                badge: "Selesai",
-                date: "1 - 3 Julai 2022",
-                location: "Kompleks Rakan Muda, Seberang Perai Selatan",
-                image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop"
+                id: "prog3",
+                title: "Misi Khidmat Komuniti Pulau Pinang",
+                category: "Kesukarelawanan",
+                date: "15 September 2026",
+                desc: "Program bakti masyarakat, pembersihan pantai, dan bantuan tuisyen percuma untuk pelajar kurang berkemampuan.",
+                img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=600&auto=format&fit=crop"
             }
         ];
 
-        /* Data Barisan AJK */
-        const committeeData = [
-            { name: "Muhammad Amirul", position: "Yang Dipertua (YDP)", uni: "Universiti Sains Malaysia", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" },
-            { name: "Nurul Aishah", position: "Timbalan Yang Dipertua", uni: "Universiti Malaya", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" },
-            { name: "Farhan Daniel", position: "Setiausaha Agung", uni: "Universiti Kebangsaan Malaysia", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" },
-            { name: "Siti Sarah", position: "Bendahari Kehormat", uni: "Universiti Teknologi Malaysia", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop" }
+        // Senarai Video Pilihan
+        const videoPlaylist = [
+            {
+                id: "yt-2016",
+                title: "Video Perkampungan Menara Gading (PMG) Pulau Pinang 2016",
+                desc: "Dokumentari rasmi dan kenangan manis program Perkampungan Menara Gading Pulau Pinang tahun 2016.",
+                type: "youtube",
+                embedUrl: "https://www.youtube.com/embed/rKRK3GrGr7c?autoplay=1",
+                directUrl: "https://www.youtube.com/watch?v=rKRK3GrGr7c",
+                channel: "Saluran: Nusair Roslan",
+                duration: "06:49",
+                badge: "YouTube",
+                badgeClass: "bg-red-600/20 text-red-400 border-red-500/30"
+            },
+            {
+                id: "ig-2022",
+                title: "Montaj PMGPP 2022 - Kebersekaan Merentasi Cabaran",
+                desc: "Sorotan kenangan serta modul latihan para peserta PMGPP 2022 di Pulau Pinang.",
+                type: "html5",
+                src: "AQP9q7P_kyBXKg1GNTXppC_IAl7m5Doe1SBCjWAU0vfetnscN90F3e1On7THBuohbXjXVUecJVgqTx-j0f6gygmW.mp4",
+                directUrl: "https://www.instagram.com/tv/CfqQ3HkpFc0/?igsh=MXV2N2ZraXdqMmV4cA%3D%3D",
+                channel: "Instagram Rasmi: @pmgpenang",
+                duration: "03:37",
+                badge: "Instagram",
+                badgeClass: "bg-pink-600/20 text-pink-400 border-pink-500/30"
+            },
+            {
+                id: "yt-2025",
+                title: "Montaj Pembukaan PMGPP 2025",
+                desc: "Sorotan suasana kejayaan Kem Kepimpinan Tahunan Mahasiswa.",
+                type: "youtube",
+                embedUrl: "https://www.youtube.com/embed/rKRK3GrGr7c",
+                directUrl: "https://www.youtube.com/watch?v=rKRK3GrGr7c",
+                channel: "Urus Setia PMGPP",
+                duration: "02:45",
+                badge: "YouTube",
+                badgeClass: "bg-red-600/20 text-red-400 border-red-500/30"
+            }
         ];
 
-        /* Data Galeri Foto */
         const galleryData = [
-            { caption: "Mesyuarat Agas Sesi 2025", category: "Mesyuarat", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" },
-            { caption: "Program Khidmat Masyarakat Belia", category: "Aktiviti", img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=600&auto=format&fit=crop" },
-            { caption: "Bengkel Modul Kepimpinan IPT", category: "Program", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" },
-            { caption: "Malam Anugerah Mahasiswa", category: "Program", img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop" },
-            { caption: "Simposium Belia Kebangsaan", category: "Program", img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=600&auto=format&fit=crop" },
-            { caption: "Penyerahan Sumbangan Kebajikan", category: "Aktiviti", img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=600&auto=format&fit=crop" }
+            { category: "kem", title: "Kem Kepimpinan 2025", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop" },
+            { category: "bengkel", title: "Sesi Modul Kepimpinan", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=500&auto=format&fit=crop" },
+            { category: "komuniti", title: "Misi Bakti Komuniti", img: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=500&auto=format&fit=crop" },
+            { category: "kem", title: "Aktiviti LDK Mahasiswa", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=500&auto=format&fit=crop" },
+            { category: "bengkel", title: "Forum Alumni PMGPP", img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=500&auto=format&fit=crop" },
+            { category: "komuniti", title: "Penyerahan Sumbangan Kebajikan", img: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=500&auto=format&fit=crop" }
         ];
 
-        /* Data Berita Terkini */
         const newsData = [
             {
-                title: "PMGP26 Akan Berlangsung Di White Resort Camp, Balik Pulau",
-                date: "25 Julai 2026",
-                category: "Pengumuman",
-                summary: "Perhimpunan Agung Mahasiswa PMGP2026 bertemakan 'Mahasiswa Bitara: Peneraju Harapan Nusa Bangsa' kini dibuka untuk pendaftaran.",
-                img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop"
+                title: "Pendaftaran PMGPP 2026 Kini Dibuka Rasmi!",
+                date: "20 Julai 2026",
+                desc: "Semua bakal mahasiswa dan pelajar pengajian tinggi digalakkan memohon awal bagi mengamankan tempat di kem perkampungan tahun ini.",
+                badge: "PENTING"
             },
             {
-                title: "Kejayaan Penganjuran PMGPP 2025 Di IPG Kampus Pulau Pinang",
-                date: "15 Jun 2025",
-                category: "Acara",
-                summary: "Program 3 hari 2 malam melahirkan belia berdaya saing berteraskan aspirasi Mahasiswa Madani.",
-                img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop"
+                title: "Sidang Alumni PMGPP Berjaya Kumpul RM50,000 Dana Tuisyen",
+                date: "12 Julai 2026",
+                desc: "Sokongan padu daripada mantan penggerak PMGPP terus memperkasakan tabung bantuan pengajian adik-adik calon SPM.",
+                badge: "BERITA"
             },
             {
-                title: "Pelantikan Barisan Exco Baharu Sesi 2025/2026",
-                date: "18 Jun 2025",
-                category: "Organisasi",
-                summary: "Satu majlis watikah pelantikan rasmi telah diadakan bagi mengamanahkan kepimpinan baharu PMGPP.",
-                img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=600&auto=format&fit=crop"
+                title: "Lawatan Mahasiswa Ke Kompleks Parlimen Malaysia",
+                date: "05 Jun 2026",
+                desc: "Delegasi PMGPP menghadiri perbahasan peringkat kebangsaan sebagai pendedahan dasar awam negara.",
+                badge: "AKTIVITI"
             }
         ];
 
         let currentLang = 'bm';
+        let currentVideoIndex = 0;
 
-        window.addEventListener('DOMContentLoaded', () => {
-            // Hilangkan Preloader
+        // Memuatkan Skrin Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
             setTimeout(() => {
-                const preloader = document.getElementById('preloader');
                 preloader.style.opacity = '0';
-                setTimeout(() => preloader.style.visibility = 'hidden', 500);
-            }, 500);
-
-            // Muatkan Komponen
-            renderPrograms();
-            renderCommittee();
-            renderGallery();
-            renderNews();
-
-            // Mula Kaunter Masa
-            initCountdown();
-
-            // Butang Kembali Ke Atas
-            window.addEventListener('scroll', () => {
-                const btn = document.getElementById('back-to-top');
-                if (window.scrollY > 400) {
-                    btn.classList.remove('hidden');
-                } else {
-                    btn.classList.add('hidden');
-                }
-            });
+                preloader.style.visibility = 'hidden';
+            }, 300);
+            
+            initPortal();
         });
 
-        // Tukar Video Player
-        function switchVideo(videoSrc, title, desc) {
-            const player = document.getElementById('main-video-player');
-            player.src = videoSrc;
-            player.load();
-            player.play().catch(e => console.log('Autoplay dimatikan oleh browser:', e));
-
-            document.getElementById('video-active-title').innerText = title;
-            document.getElementById('video-active-desc').innerText = desc;
-            
-            showToast("Video ditukar: " + title);
+        function initPortal() {
+            renderPrograms();
+            renderPlaylist();
+            renderGallery('all');
+            renderNews();
+            startCountdown();
+            checkDarkModePreference();
         }
 
-        // Tunjuk Toast Notification
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-message').innerText = msg;
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
-        }
-
-        // Modal Info
-        function showModalInfo(title, bodyText) {
-            document.getElementById('info-modal-title').innerText = title;
-            document.getElementById('info-modal-body').innerText = bodyText;
-            document.getElementById('info-modal').classList.remove('hidden');
-        }
-
-        function closeModalInfo() {
-            document.getElementById('info-modal').classList.add('hidden');
-        }
-
-        // Penukar Bahasa
         function setLanguage(lang) {
             currentLang = lang;
-            
-            document.getElementById('lang-bm').className = lang === 'bm' ? "font-bold text-govGold-400 hover:underline flex items-center gap-1" : "hover:text-govGold-400 transition flex items-center gap-1";
-            document.getElementById('lang-en').className = lang === 'en' ? "font-bold text-govGold-400 hover:underline flex items-center gap-1" : "hover:text-govGold-400 transition flex items-center gap-1";
-
-            document.querySelectorAll('[data-i18n]').forEach(elem => {
-                const key = elem.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    elem.textContent = translations[lang][key];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang][key]) {
+                    el.textContent = i18n[lang][key];
                 }
             });
+
+            const btnBm = document.getElementById('lang-bm');
+            const btnEn = document.getElementById('lang-en');
+            if (lang === 'bm') {
+                btnBm.className = "font-bold text-govGold-400 hover:underline flex items-center gap-1";
+                btnEn.className = "hover:text-govGold-400 transition flex items-center gap-1 text-slate-300";
+            } else {
+                btnEn.className = "font-bold text-govGold-400 hover:underline flex items-center gap-1";
+                btnBm.className = "hover:text-govGold-400 transition flex items-center gap-1 text-slate-300";
+            }
         }
 
-        // Mod Gelap
         function toggleDarkMode() {
             const html = document.documentElement;
             const icon = document.getElementById('dark-icon');
             if (html.classList.contains('dark')) {
                 html.classList.remove('dark');
                 icon.className = 'fa-solid fa-moon';
+                localStorage.setItem('theme', 'light');
             } else {
                 html.classList.add('dark');
                 icon.className = 'fa-solid fa-sun text-govGold-400';
+                localStorage.setItem('theme', 'dark');
             }
         }
 
-        // Logik Kaunter Masa
-        function initCountdown() {
-            const targetDate = new Date('2026-07-25T09:00:00').getTime();
+        function checkDarkModePreference() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.getElementById('dark-icon').className = 'fa-solid fa-sun text-govGold-400';
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.getElementById('dark-icon').className = 'fa-solid fa-moon';
+            }
+        }
 
+        function startCountdown() {
+            const targetDate = new Date("July 25, 2026 08:00:00").getTime();
+            
             function update() {
                 const now = new Date().getTime();
-                const diff = targetDate - now;
+                const difference = targetDate - now;
 
-                if (diff <= 0) {
-                    document.getElementById('cd-days').innerText = "00";
-                    document.getElementById('cd-hours').innerText = "00";
-                    document.getElementById('cd-minutes').innerText = "00";
-                    document.getElementById('cd-seconds').innerText = "00";
-                    return;
+                if (difference > 0) {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    document.getElementById('cd-days').textContent = days.toString().padStart(2, '0');
+                    document.getElementById('cd-hours').textContent = hours.toString().padStart(2, '0');
+                    document.getElementById('cd-minutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('cd-seconds').textContent = seconds.toString().padStart(2, '0');
+                } else {
+                    document.getElementById('cd-days').textContent = "00";
+                    document.getElementById('cd-hours').textContent = "00";
+                    document.getElementById('cd-minutes').textContent = "00";
+                    document.getElementById('cd-seconds').textContent = "00";
                 }
-
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                document.getElementById('cd-days').innerText = days < 10 ? '0' + days : days;
-                document.getElementById('cd-hours').innerText = hours < 10 ? '0' + hours : hours;
-                document.getElementById('cd-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-                document.getElementById('cd-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
             }
-
             update();
             setInterval(update, 1000);
         }
 
-        // Render Program
         function renderPrograms() {
             const container = document.getElementById('program-container');
-            container.innerHTML = programData.map(p => `
-                <div class="glass-card-light rounded-3xl overflow-hidden flex flex-col hover:shadow-2xl hover:-translate-y-1 transition duration-300">
-                    <div class="relative h-48">
-                        <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover">
-                        <span class="absolute top-3 right-3 text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md ${p.badge === 'Akan Datang' ? 'bg-govGold-500 text-slate-950' : 'bg-slate-900/80 text-slate-300'}">
-                            ${p.badge}
-                        </span>
-                    </div>
+            container.innerHTML = programsData.map(p => `
+                <div class="rounded-3xl glass-card-light overflow-hidden shadow-lg border hover:-translate-y-1 transition duration-300 flex flex-col">
+                    <img src="${p.img}" alt="${p.title}" class="w-full h-48 object-cover">
                     <div class="p-6 flex-grow flex flex-col justify-between">
                         <div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-1">${p.title}</h4>
-                            <p class="text-xs text-govGold-600 dark:text-govGold-400 font-semibold mb-3">${p.subtitle}</p>
-                            <div class="text-xs text-slate-500 dark:text-slate-400 space-y-1.5 mb-4">
-                                <div><i class="fa-solid fa-calendar mr-1.5 text-slate-400"></i> ${p.date}</div>
-                                <div><i class="fa-solid fa-location-dot mr-1.5 text-slate-400"></i> ${p.location}</div>
-                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-govGold-500/10 text-govGold-600 dark:text-govGold-400 border border-govGold-500/30 inline-block mb-3">${p.category}</span>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">${p.title}</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-1.5"><i class="fa-regular fa-calendar text-govGold-500"></i> ${p.date}</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">${p.desc}</p>
                         </div>
-                        <button onclick="showModalInfo('${p.title}', 'Tema: ${p.subtitle}\\nTarikh: ${p.date}\\nLokasi: ${p.location}')" class="w-full py-2.5 bg-slate-100/80 hover:bg-slate-200/80 dark:bg-slate-800/80 dark:hover:bg-slate-700/80 dark:text-slate-200 text-xs font-bold rounded-xl transition backdrop-blur-md">
-                            Lihat Butiran Program
-                        </button>
+                        <button onclick="showToast('Maklumat lanjut program telah dihantar ke e-mel anda!')" class="w-full py-2.5 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-govGold-500 hover:text-slate-950 text-white font-semibold text-xs transition border border-slate-700">Daftar / Info Lanjut</button>
                     </div>
                 </div>
             `).join('');
         }
 
-        // Render AJK
-        function renderCommittee() {
-            const container = document.getElementById('committee-container');
-            container.innerHTML = committeeData.map(c => `
-                <div class="glass-card-light rounded-3xl p-6 text-center hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                    <div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4 border-2 border-govGold-500 shadow-md">
-                        <img src="${c.img}" alt="${c.name}" class="w-full h-full object-cover">
+        function renderPlaylist() {
+            const container = document.getElementById('video-playlist-container');
+            container.innerHTML = videoPlaylist.map((v, index) => `
+                <div onclick="switchVideo(${index})" class="p-3 rounded-2xl ${index === currentVideoIndex ? 'bg-slate-800 ring-2 ring-govGold-500' : 'bg-slate-950/80 hover:bg-slate-800/90'} border border-slate-800/80 cursor-pointer transition flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-govGold-500/20 text-govGold-400 flex items-center justify-center shrink-0 group-hover:bg-govGold-500 group-hover:text-slate-950 transition">
+                        <i class="fa-solid ${v.type === 'youtube' ? 'fa-play' : 'fa-film'} text-xs"></i>
                     </div>
-                    <h5 class="font-bold text-slate-900 dark:text-white text-base">${c.name}</h5>
-                    <div class="text-xs font-bold text-govGold-600 dark:text-govGold-400 mt-1">${c.position}</div>
-                    <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">${c.uni}</div>
-                </div>
-            `).join('');
-        }
-
-        // Render Galeri
-        function renderGallery() {
-            const container = document.getElementById('gallery-container');
-            container.innerHTML = galleryData.map(g => `
-                <div onclick="openLightbox('${g.img}', '${g.caption}')" class="relative group rounded-2xl overflow-hidden cursor-pointer h-52 bg-slate-800 shadow-md">
-                    <img src="${g.img}" alt="${g.caption}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4 backdrop-blur-[2px]">
-                        <span class="text-[10px] font-bold text-govGold-400 uppercase tracking-widest">${g.category}</span>
-                        <p class="text-xs font-bold text-white">${g.caption}</p>
+                    <div class="flex-grow overflow-hidden">
+                        <div class="flex items-center gap-2 mb-0.5">
+                            <span class="text-[9px] font-bold px-2 py-0.2 rounded-full border ${v.badgeClass}">${v.badge}</span>
+                            <span class="text-[10px] text-slate-400">${v.duration}</span>
+                        </div>
+                        <h5 class="text-xs font-bold text-white truncate">${v.title}</h5>
                     </div>
                 </div>
             `).join('');
         }
 
-        // Render Berita
+        function switchVideo(index) {
+            currentVideoIndex = index;
+            const item = videoPlaylist[index];
+            
+            const ytPlayer = document.getElementById('main-youtube-player');
+            const html5Player = document.getElementById('main-video-player');
+            const videoSource = document.getElementById('video-source');
+            const fallbackUi = document.getElementById('video-fallback-ui');
+            const extLink = document.getElementById('external-video-link');
+            const directBtn = document.getElementById('video-direct-btn');
+
+            if (fallbackUi) {
+                fallbackUi.classList.add('hidden');
+                fallbackUi.classList.remove('flex');
+            }
+
+            if (item.type === 'youtube') {
+                html5Player.classList.add('hidden');
+                html5Player.pause();
+                
+                ytPlayer.classList.remove('hidden');
+                ytPlayer.src = item.embedUrl;
+            } else {
+                ytPlayer.classList.add('hidden');
+                ytPlayer.src = "";
+
+                html5Player.classList.remove('hidden');
+                videoSource.src = item.src;
+                html5Player.load();
+                
+                const playPromise = html5Player.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.warn("Video HTML5 disekat atau gagal dimuatkan:", error);
+                        handleVideoError();
+                    });
+                }
+            }
+
+            // Kemas kini maklumat video
+            document.getElementById('video-active-title').textContent = item.title;
+            document.getElementById('video-active-desc').textContent = item.desc;
+            document.getElementById('video-active-channel').textContent = item.channel;
+            
+            const badgeEl = document.getElementById('video-active-badge');
+            badgeEl.className = `px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${item.badgeClass}`;
+            badgeEl.innerHTML = item.type === 'youtube' ? `<i class="fa-brands fa-youtube mr-1"></i> YouTube` : `<i class="fa-brands fa-instagram mr-1"></i> Instagram`;
+
+            if (extLink) extLink.href = item.directUrl;
+            if (directBtn) directBtn.href = item.directUrl;
+
+            renderPlaylist();
+        }
+
+        function handleVideoError() {
+            const fallbackUi = document.getElementById('video-fallback-ui');
+            if (fallbackUi) {
+                fallbackUi.classList.remove('hidden');
+                fallbackUi.classList.add('flex');
+            }
+        }
+
+        function renderGallery(cat) {
+            const container = document.getElementById('gallery-grid');
+            const filtered = cat === 'all' ? galleryData : galleryData.filter(g => g.category === cat);
+            
+            container.innerHTML = filtered.map(g => `
+                <div onclick="openGalleryModal('${g.img}', '${g.title}')" class="relative rounded-2xl overflow-hidden group cursor-pointer border border-slate-200/50 dark:border-slate-800 shadow-md">
+                    <img src="${g.img}" alt="${g.title}" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
+                        <div>
+                            <i class="fa-solid fa-magnifying-glass-plus text-govGold-400 text-2xl mb-1"></i>
+                            <p class="text-xs font-bold text-white">${g.title}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterGallery(cat) {
+            document.querySelectorAll('.gallery-btn').forEach(btn => {
+                btn.className = "gallery-btn px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-govGold-500 hover:text-slate-950 transition text-slate-700 dark:text-slate-300";
+            });
+            event.target.className = "gallery-btn active px-4 py-2 rounded-xl bg-govGold-500 text-slate-950 shadow-md";
+            renderGallery(cat);
+        }
+
         function renderNews() {
-            const container = document.getElementById('news-container');
+            const container = document.getElementById('news-grid');
             container.innerHTML = newsData.map(n => `
-                <div class="glass-card-light rounded-3xl overflow-hidden hover:shadow-xl transition duration-300">
-                    <div class="h-44 overflow-hidden">
-                        <img src="${n.img}" alt="${n.title}" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
-                            <span class="px-2 py-0.5 rounded-md bg-primary-500/10 dark:bg-slate-800 text-primary-700 dark:text-govGold-400 font-bold">${n.category}</span>
-                            <span>•</span>
-                            <span>${n.date}</span>
+                <div class="p-6 rounded-3xl glass-card-light border flex flex-col justify-between hover:border-govGold-500 transition duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">${n.badge}</span>
+                            <span class="text-xs text-slate-400">${n.date}</span>
                         </div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-base leading-snug mb-2 line-clamp-2">${n.title}</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed mb-4">${n.summary}</p>
-                        <button onclick="showModalInfo('${n.title}', '${n.summary}')" class="text-xs font-bold text-govGold-600 dark:text-govGold-400 hover:underline inline-flex items-center gap-1">
-                            Baca Lanjut <i class="fa-solid fa-angle-right text-[10px]"></i>
-                        </button>
+                        <h4 class="font-bold text-base text-slate-900 dark:text-white mb-2 leading-snug">${n.title}</h4>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${n.desc}</p>
                     </div>
+                    <button onclick="showToast('Artikel berita penuh dibuka!')" class="mt-6 text-xs font-bold text-govGold-600 dark:text-govGold-400 hover:underline flex items-center gap-1">
+                        Baca Selanjutnya <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
                 </div>
             `).join('');
         }
 
-        // Menu Mobile Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Lightbox Foto
-        function openLightbox(imgUrl, caption) {
-            document.getElementById('lightbox-img').src = imgUrl;
-            document.getElementById('lightbox-caption').innerText = caption;
-            document.getElementById('lightbox-modal').classList.remove('hidden');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox-modal').classList.add('hidden');
-        }
-
-        // Carian Modal
         function toggleSearchModal() {
             const modal = document.getElementById('search-modal');
             modal.classList.toggle('hidden');
-            if (!modal.classList.contains('hidden')) {
-                document.getElementById('search-input').focus();
-            }
+            modal.classList.toggle('flex');
         }
 
         function performSearch() {
-            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const query = document.getElementById('search-input').value.toLowerCase();
             const resultsContainer = document.getElementById('search-results');
-
-            if (query.length < 2) {
-                resultsContainer.innerHTML = '<p class="text-xs text-slate-400 italic">Masukkan sekurang-kurangnya 2 abjad untuk mula mencari...</p>';
+            if (!query.trim()) {
+                resultsContainer.innerHTML = '<p class="text-slate-500 text-center py-4">Masukkan kata kunci carian di atas.</p>';
                 return;
             }
 
-            const matchedNews = newsData.filter(n => n.title.toLowerCase().includes(query) || n.summary.toLowerCase().includes(query));
-            const matchedProgs = programData.filter(p => p.title.toLowerCase().includes(query) || p.subtitle.toLowerCase().includes(query));
+            const matchedProg = programsData.filter(p => p.title.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query));
+            const matchedNews = newsData.filter(n => n.title.toLowerCase().includes(query) || n.desc.toLowerCase().includes(query));
 
             let html = '';
+            matchedProg.forEach(p => {
+                html += `<div class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 cursor-pointer" onclick="toggleSearchModal()"><span class="text-govGold-400 font-bold">[PROGRAM]</span> ${p.title}</div>`;
+            });
+            matchedNews.forEach(n => {
+                html += `<div class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 cursor-pointer" onclick="toggleSearchModal()"><span class="text-sky-400 font-bold">[BERITA]</span> ${n.title}</div>`;
+            });
 
-            if (matchedProgs.length > 0) {
-                html += '<div class="font-bold text-xs uppercase text-govGold-500 mb-1">Program</div>';
-                matchedProgs.forEach(p => {
-                    html += `<div onclick="showModalInfo('${p.title}', '${p.subtitle} - ${p.location}')" class="p-2.5 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 mb-1.5 cursor-pointer hover:border-govGold-500 transition">
-                        <div class="font-bold text-slate-900 dark:text-white">${p.title}</div>
-                        <div class="text-xs text-slate-400">${p.subtitle}</div>
-                    </div>`;
-                });
+            if (!html) {
+                html = '<p class="text-slate-500 text-center py-4">Tiada padanan dijumpai.</p>';
             }
-
-            if (matchedNews.length > 0) {
-                html += '<div class="font-bold text-xs uppercase text-govGold-500 mt-3 mb-1">Berita</div>';
-                matchedNews.forEach(n => {
-                    html += `<div onclick="showModalInfo('${n.title}', '${n.summary}')" class="p-2.5 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 mb-1.5 cursor-pointer hover:border-govGold-500 transition">
-                        <div class="font-bold text-slate-900 dark:text-white">${n.title}</div>
-                        <div class="text-xs text-slate-400">${n.date}</div>
-                    </div>`;
-                });
-            }
-
-            if (matchedProgs.length === 0 && matchedNews.length === 0) {
-                html = '<p class="text-xs text-slate-400 italic">Tiada padanan dijumpai untuk kata kunci tersebut.</p>';
-            }
-
             resultsContainer.innerHTML = html;
         }
 
-        // Scroll Ke Atas
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function openGalleryModal(src, caption) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal-caption').textContent = caption;
+            const modal = document.getElementById('gallery-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
         }
 
-        // Borang Hubungi
+        function closeGalleryModal() {
+            const modal = document.getElementById('gallery-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
         function handleContactSubmit(e) {
             e.preventDefault();
-            showToast("Mesej anda telah berjaya dihantar ke sukpmgpp@gmail.com!");
+            showToast('Terima kasih! Mesej anda telah berjaya dihantar.');
             e.target.reset();
+        }
+
+        function copyVideoLink() {
+            const item = videoPlaylist[currentVideoIndex];
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = item.directUrl;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            showToast('Pautan video berjaya disalin ke papan klip!');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3500);
         }
     </script>
 </body>
